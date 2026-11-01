@@ -1,0 +1,18 @@
+# Capturas de red (pueden ser muy grandes)
+*.pcap
+*.pcapng
+
+# Log de strace completo (puede ser enorme — el filtrado SÍ va en el repo)
+analysis/strace/strace_completo.log
+
+# Proyecto de Ghidra (binario grande — sube solo si < 50 MB)
+# analysis/ghidra/proyecto.gar
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+__pycache__/
+
+# Editor
+*.swp
+.vscode/
