@@ -3,7 +3,7 @@
 // Modifica los campos marcados con TODO antes de usar
 // ============================================================
 
-rule BinarioObjetivo_APELLIDO {
+rule BinarioObjetivo_ramos {
 
     meta:
         author      = "Carlos Adriàn Ramos Zacarias 2013681"
