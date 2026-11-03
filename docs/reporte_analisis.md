@@ -39,20 +39,24 @@
 Copia aquí los más significativos de `analysis/strings/strings_interesantes.txt`:
 
 ```
-(pegar aquí)
+http://example.com/api/status
+/home/carlos/pac-ad2026-a19-nasm-flags-objdump-group-5
 ```
 
 ¿Qué te dicen estos strings sobre el comportamiento del binario?
 
-> (Tu análisis aquí)
+Por sí solos, estos strings no me permiten determinar el comportamiento del binario, tal vez sea mi falta de experiencia, pero lo mas que podría asumir es que tal vez utiliza alguna api, faltaría hacer un analizáis con alguna herramienta como Ghidra para obtener mas información del binario.
 
 ### 2.3 Secciones relevantes
 
 | Sección | Propósito | ¿Inusual o notable? |
 |---------|-----------|---------------------|
-| .text | Código ejecutable | |
-| .data | Variables inicializadas | |
-| | | |
+| .text | Contiene instrucciones ejecutables.| 	Tiene indicadores AX: ocupa memoria y contiene código ejecutable.|
+| .data | 	Contiene datos inicializados que admiten escritura.| Tiene indicadores WA: ocupa memoria y admite escritura.|
+| .rodata| 	Contiene datos de solo lectura.| 	Tiene A, sin W ni X.|
+| .bss| 	Reserva espacio para datos inicializados a cero.| Es NOBITS: su contenido no ocupa bytes dentro del archivo.|
+| .debug_info| 	Contiene información de depuración.| Facilita el análisis y coincide con `with debug info` de `file`.|
+| .symtab| 	Contiene la tabla de símbolos.| 	Permite consultar nombres como los que vimos con nm.|
 
 ---
 
@@ -62,7 +66,7 @@ Copia aquí los más significativos de `analysis/strings/strings_interesantes.tx
 
 ¿Por qué elegiste estos strings/bytes para tu regla? ¿Son únicos del binario o podrían causar falsos positivos?
 
-> (Tu análisis aquí)
+Se utilizo edu-lab-a19-pacad2026 por su aparición en strings_raw.txt, tal vez podría causar falso positivos, no puedo decir que no, pero es más específico que un saludo común o  http, se combino esta cadena con la firma de ELF porque un texto con el identificador no debe bastar, ni tampoco cualquier archivo ELF
 
 ### 3.2 Resultado de la prueba
 
@@ -70,11 +74,13 @@ El archivo `analysis/yara/resultado_yara.txt` contiene la salida completa.
 Pega aquí el resultado clave:
 
 ```
-(pegar salida de yara aquí)
+Practica_Mags_Objetivo binary/objetivo.elf
+0x300d:$identificador: edu-lab-a19-pacad2026
+0x0:$header_elf: 7F 45 4C 46
 ```
 
-**¿La regla detectó el binario?** Sí / No  
-**Falsos positivos encontrados:** Ninguno / (describe cuáles)
+**¿La regla detectó el binario?** Sí
+**Falsos positivos encontrados:** Ninguno
 
 ---
 
