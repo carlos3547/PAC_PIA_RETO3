@@ -1,3 +1,0 @@
-Hola, mundo!
-MAGIC: edu-lab-a19-pacad2026
-Resultado: 793
