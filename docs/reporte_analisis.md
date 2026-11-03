@@ -10,14 +10,6 @@
 
 | Campo | Valor |
 |-------|-------|
-<<<<<<< HEAD
-| Nombre | Marcos Adrian Gonzalez Soto |
-| Matrícula | 2037908 |
-| Fecha de análisis | 02/11/2026 |
-| VM / SO / RAM | VirtualBox/Ubuntu/6 GB |
-| Binario elegido (opción A/B/C/D) | |
-| Justificación de la elección | |
-=======
 | Nombre |Carlos Adriàn Ramos Zacarias|
 | Matrícula |2013681|
 | Fecha de análisis |02/11/2026 |
