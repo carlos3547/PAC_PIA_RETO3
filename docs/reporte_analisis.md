@@ -10,10 +10,10 @@
 
 | Campo | Valor |
 |-------|-------|
-| Nombre | |
-| Matrícula | |
-| Fecha de análisis | |
-| VM / SO / RAM | |
+| Nombre | Marcos Adrian Gonzalez Soto |
+| Matrícula | 2037908 |
+| Fecha de análisis | 02/11/2026 |
+| VM / SO / RAM | VirtualBox/Ubuntu/6 GB |
 | Binario elegido (opción A/B/C/D) | |
 | Justificación de la elección | |
 
@@ -25,12 +25,12 @@
 
 | Campo | Valor |
 |-------|-------|
-| Nombre original | |
-| SHA-256 | |
-| Tipo (`file`) | |
-| Arquitectura | |
-| Stripped | Sí / No |
-| Secciones ELF presentes | |
+| Nombre original | objetivo.elf — nombre del archivo analizado; nombre previo no confirmado |
+| SHA-256 | 	a2ed5872c1d7e828ca5e43565211c81b28317fe9a8999b9f390148934c01d69b |
+| Tipo (`file`) | ELF de 64 bits, little-endian, ejecutable PIE, enlazado dinámicamente, con información de depuración |
+| Arquitectura | x86-64 |
+| Stripped | No |
+| Secciones ELF presentes | 	39 secciones; destacan .text, .rodata, .data, .bss, .dynsym, .symtab, .strtab y .debug_* |
 
 > Los archivos completos están en `analysis/strings/`.
 
