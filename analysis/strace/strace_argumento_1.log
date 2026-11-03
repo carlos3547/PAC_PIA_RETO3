@@ -1,0 +1,14 @@
+execve("./binary/objetivo.elf", ["./binary/objetivo.elf", "1"], 0x7ffdeac80a80 /* 54 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No existe el archivo o el directorio)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+write(1, "Hola, mundo!\n", 13Hola, mundo!
+)          = 13
+write(1, "MAGIC: edu-lab-a19-pacad2026\n", 29MAGIC: edu-lab-a19-pacad2026
+) = 29
+write(1, "Resultado: 9\n", 13Resultado: 9
+)          = 13
++++ exited with 0 +++
