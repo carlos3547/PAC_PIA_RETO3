@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [pid 10480] _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x5c8b6af810c0, 0x5c8b6af7f041, 0x5c8b6af7f041, 0x5c8b6af80da8) = 0x5c8b6af810c0
 [pid 10480] _ZNSolsEPFRSoS_E(0x5c8b6af810c0, 0x729ed2162a40, 0x729ed2162a40, 12Hola, mundo!
 ) = 0x5c8b6af810c0
@@ -6,3 +7,11 @@
 [pid 10480] _ZNSolsEPFRSoS_E(0x5c8b6af810c0, 0x729ed2162a40, 0x729ed2162a40, 21MAGIC: edu-lab-a19-pacad2026
 ) = 0x5c8b6af810c0
 [pid 10480] +++ exited (status 0) +++
+=======
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x559894f940c0, 0x559894f92041, 0x559894f92041, 0x559894f93da8) = 0x559894f940c0
+_ZNSolsEPFRSoS_E(0x559894f940c0, 0x7f0b02d46410, 0x7f0b02d46410, 12)              = 0x559894f940c0
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x559894f940c0, 0x559894f9204e, 0x559894f9204e, 0x7f0b02bf3790) = 0x559894f940c0
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x559894f940c0, 0x559894f9200d, 0x559894f940c0, 7) = 0x559894f940c0
+_ZNSolsEPFRSoS_E(0x559894f940c0, 0x7f0b02d46410, 0x7f0b02d46410, 21)              = 0x559894f940c0
++++ exited (status 0) +++
+>>>>>>> dd9750b (reporte de anàlisis y secciones finales del Reto 3 terminado)

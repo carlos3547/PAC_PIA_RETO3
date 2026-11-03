@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ┌───────────┬──────────────────────────────────────────────────────────────────────────────────────┐
 │ md5       │ 9ebf30ee3d5225772e095e5e5e80fde4                                                     │
 │ sha1      │ 589f7c0c31ac7a65fffaf26fa89d05b40289ef23                                             │
@@ -8,5 +9,17 @@
 │ arch      │ amd64                                                                                │
 │ path      │ /home/mags/Descargas/reto-fase3-analisis-binario2/reto-fase3/binary/objetivo.elf     │
 └───────────┴──────────────────────────────────────────────────────────────────────────────────────┘
+=======
+┌─────────────┬────────────────────────────────────────────────────────────────────────────────────┐
+│ md5         │ 9ebf30ee3d5225772e095e5e5e80fde4                                                   │
+│ sha1        │ 589f7c0c31ac7a65fffaf26fa89d05b40289ef23                                           │
+│ sha256      │ a2ed5872c1d7e828ca5e43565211c81b28317fe9a8999b9f390148934c01d69b                   │
+│ analysis    │ static                                                                             │
+│ os          │ linux                                                                              │
+│ format      │ elf                                                                                │
+│ arch        │ amd64                                                                              │
+│ path        │ /home/carlos/pac-ad2026-reto3-pac-group-4/binary/objetivo.elf                      │
+└─────────────┴────────────────────────────────────────────────────────────────────────────────────┘
+>>>>>>> a7ab8d2 (reporte de anàlisis y secciones finales del Reto 3 terminado)
 no capabilities found
 

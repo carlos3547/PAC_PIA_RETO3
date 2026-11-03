@@ -1,6 +1,76 @@
+<<<<<<< HEAD
 execve("./binary/objetivo.elf", ["./binary/objetivo.elf"], 0x7ffea26a1768 /* 54 vars */) = 0
 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+=======
+289034 execve("./binary/objetivo.elf", ["./binary/objetivo.elf"], 0x7ffedade59a8 /* 56 vars */) = 0
+289034 brk(NULL)                        = 0x562be0c0f000
+289034 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff4e5348000
+289034 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No existe el fichero o el directorio)
+289034 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+289034 fstat(3, {st_mode=S_IFREG|0644, st_size=105859, ...}) = 0
+289034 mmap(NULL, 105859, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7ff4e532e000
+289034 close(3)                         = 0
+289034 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+289034 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+289034 fstat(3, {st_mode=S_IFREG|0644, st_size=2559240, ...}) = 0
+289034 mmap(NULL, 2576648, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7ff4e5000000
+289034 mmap(0x7ff4e50a2000, 1245184, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa2000) = 0x7ff4e50a2000
+289034 mmap(0x7ff4e51d2000, 581632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d2000) = 0x7ff4e51d2000
+289034 mmap(0x7ff4e5260000, 73728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25f000) = 0x7ff4e5260000
+289034 mmap(0x7ff4e5272000, 12552, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7ff4e5272000
+289034 close(3)                         = 0
+289034 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+289034 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+289034 fstat(3, {st_mode=S_IFREG|0644, st_size=178760, ...}) = 0
+289034 mmap(NULL, 181160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7ff4e5301000
+289034 mmap(0x7ff4e5305000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7ff4e5305000
+289034 mmap(0x7ff4e5328000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x7ff4e5328000
+289034 mmap(0x7ff4e532c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2a000) = 0x7ff4e532c000
+289034 close(3)                         = 0
+289034 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+289034 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000\241\2\0\0\0\0\0"..., 832) = 832
+289034 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+289034 fstat(3, {st_mode=S_IFREG|0755, st_size=2014472, ...}) = 0
+289034 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+289034 mmap(NULL, 2055760, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7ff4e4e0a000
+289034 mmap(0x7ff4e4e32000, 1474560, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7ff4e4e32000
+289034 mmap(0x7ff4e4f9a000, 339968, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x190000) = 0x7ff4e4f9a000
+289034 mmap(0x7ff4e4fed000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e3000) = 0x7ff4e4fed000
+289034 mmap(0x7ff4e4ff3000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7ff4e4ff3000
+289034 close(3)                         = 0
+289034 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+289034 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+289034 fstat(3, {st_mode=S_IFREG|0644, st_size=1001688, ...}) = 0
+289034 mmap(NULL, 1003544, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7ff4e4d14000
+289034 mmap(0x7ff4e4d25000, 536576, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7ff4e4d25000
+289034 mmap(0x7ff4e4da8000, 393216, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x94000) = 0x7ff4e4da8000
+289034 mmap(0x7ff4e4e08000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf3000) = 0x7ff4e4e08000
+289034 close(3)                         = 0
+289034 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff4e52ff000
+289034 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ff4e52fc000
+289034 arch_prctl(ARCH_SET_FS, 0x7ff4e52fc780) = 0
+289034 set_tid_address(0x7ff4e52fca50)  = 289034
+289034 set_robust_list(0x7ff4e52fca60, 24) = 0
+289034 rseq({cpu_id_start=0, cpu_id=RSEQ_CPU_ID_UNINITIALIZED, rseq_cs=NULL, flags=0, node_id=0, mm_cid=0, slice_ctrl={request=0, granted=0, __reserved=0}, __reserved=0}, 32, 0, 0x53053053) = 0
+289034 mprotect(0x7ff4e4fed000, 16384, PROT_READ) = 0
+289034 mprotect(0x7ff4e4e08000, 4096, PROT_READ) = 0
+289034 mprotect(0x7ff4e532c000, 4096, PROT_READ) = 0
+289034 mprotect(0x7ff4e5260000, 61440, PROT_READ) = 0
+289034 mprotect(0x562bb538e000, 4096, PROT_READ) = 0
+289034 mprotect(0x7ff4e5386000, 8192, PROT_READ) = 0
+289034 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+289034 getrandom("\x12\xea\x58\xf6\x83\xdd\x19\x01", 8, GRND_NONBLOCK) = 8
+289034 munmap(0x7ff4e532e000, 105859)   = 0
+289034 futex(0x7ff4e527277c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+289034 brk(NULL)                        = 0x562be0c0f000
+289034 brk(0x562be0c42000)              = 0x562be0c42000
+289034 fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0), ...}) = 0
+289034 write(1, "Hola, mundo!\n", 13)   = 13
+289034 write(1, "MAGIC: edu-lab-a19-pacad2026\n", 29) = 29
+289034 exit_group(0)                    = ?
+289034 +++ exited with 0 +++
+>>>>>>> dd9750b (reporte de anàlisis y secciones finales del Reto 3 terminado)
