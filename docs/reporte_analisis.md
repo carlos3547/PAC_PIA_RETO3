@@ -74,7 +74,7 @@ El archivo `analysis/yara/resultado_yara.txt` contiene la salida completa.
 Pega aquí el resultado clave:
 
 ```
-Practica_Mags_Objetivo binary/objetivo.elf
+BinarioObjetivo_Ramos binary/objetivo.elf
 0x300d:$identificador: edu-lab-a19-pacad2026
 0x0:$header_elf: 7F 45 4C 46
 ```
