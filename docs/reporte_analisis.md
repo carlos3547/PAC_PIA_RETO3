@@ -80,63 +80,91 @@ Pega aquí el resultado clave:
 
 ## 4. Análisis con Ghidra
 
-> Las capturas de pantalla están en `analysis/ghidra/screenshots/`.
+Las evidencias se organizan en `analysis/ghidra/`: listado de funciones, pseudocódigo y carpeta `screenshots/`.
 
 ### 4.1 Funciones identificadas
 
-Copia las más relevantes de `analysis/ghidra/funciones.txt`:
+El script `src/listar_funciones.py`, ejecutado dentro de Ghidra, enumeró 90 funciones. El listado completo está en `analysis/ghidra/funciones.txt`. Incluye funciones del programa, rutinas de inicialización, funciones de biblioteca y entradas externas; el total no representa 90 funciones desarrolladas por el autor.
 
 | Nombre de función | Dirección | Descripción inferida |
 |-------------------|-----------|----------------------|
-| main | 0x... | Punto de entrada |
-| | | |
-| | | |
+| main | 0x0010226B | Coordina la salida por consola, conversión del argumento, validación y cálculo. |
+| validar | 0x0010224A | Comprueba que el entero esté entre 1 y 99, inclusive. |
+| compute | 0x00102209 | Combina multiplicación, suma y tres operaciones XOR para obtener el resultado. |
+
+Las direcciones corresponden al programa cargado en Ghidra; no son offsets del archivo ni direcciones de ejecución verificadas dinámicamente.
 
 ### 4.2 Función de interés #1
 
-**Nombre:** `___________`  
-**Dirección:** `0x___`  
+**Nombre:** `main`  
+**Dirección:** `0x0010226B`  
 **¿Por qué es interesante?**
 
-> (Tu análisis)
+Permite reconstruir el flujo principal. Imprime `Hola, mundo!` y el contenido de `MAGIC`. Si existe un primer argumento, lo convierte a entero decimal con `std::stoi`, llama a `validar(n)` y decide entre calcular un resultado o imprimir un mensaje de error. Si no hay argumento, omite la validación y el cálculo. El flujo normal termina con `return 0`.
 
 ```c
 // Ver también: analysis/ghidra/pseudocodigo_main.c
-// Fragmento más relevante:
-(pegar aquí)
+// Fragmento del pseudocódigo de Ghidra:
+bVar1 = validar(n);
+if (bVar1) {
+  poVar3 = std::operator<<((ostream *)std::cout,"Resultado: ");
+  iVar2 = compute(n,n * 2);
+  this = (void *)std::ostream::operator<<(poVar3,iVar2);
+  std::ostream::operator<<(this,std::endl<>);
+}
+else {
+  poVar3 = std::operator<<((ostream *)std::cout,"Valor fuera de rango (0-100)");
+  std::ostream::operator<<(poVar3,std::endl<>);
+}
 ```
+
+La conversión ocurre antes de la validación del rango. El pseudocódigo revisado no muestra un tratamiento explícito en `main` para las excepciones de conversión; las anotaciones de limpieza de objetos de C++ no demuestran por sí mismas que dichas excepciones se gestionen con un mensaje para el usuario.
 
 ### 4.3 Función de interés #2
 
-**Nombre:** `___________`  
-**Dirección:** `0x___`  
+**Nombre:** `validar`  
+**Dirección:** `0x0010224A`  
 **¿Por qué es interesante?**
 
-> (Tu análisis)
+Define el rango realmente admitido por el programa. Devuelve falso si `n < 1` o `n > 99`, y verdadero en los demás casos. Existe una discrepancia con el mensaje de `main`: aunque este anuncia `(0-100)`, los valores 0 y 100 se rechazan.
 
 ```c
 // Ver también: analysis/ghidra/pseudocodigo_fn2.c
-(pegar aquí)
+if ((n < 1) || (99 < n)) {
+  bVar1 = false;
+}
+else {
+  bVar1 = true;
+}
+return bVar1;
 ```
 
 ### 4.4 Función de interés #3
 
-**Nombre:** `___________`  
-**Dirección:** `0x___`  
+**Nombre:** `compute`  
+**Dirección:** `0x00102209`  
 **¿Por qué es interesante?**
 
-> (Tu análisis)
+Contiene la transformación que produce el resultado mostrado por `main`. Inicializa `x` con `b + a * 7` y realiza tres iteraciones de XOR con `a + i`. La suma tiene prioridad sobre XOR, por lo que `x ^ a + i` se interpreta como `x ^ (a + i)`.
 
 ```c
 // Ver también: analysis/ghidra/pseudocodigo_fn3.c
-(pegar aquí)
+x = b + a * 7;
+for (i = 0; i < 3; i = i + 1) {
+  x = x ^ a + i;
+}
+return x;
 ```
+
+Como `main` llama a `compute(n, n * 2)`, el valor inicial es `9 * n`, al que se aplican sucesivamente XOR con `n`, `n + 1` y `n + 2`. Por ejemplo, para `n = 1`, el cálculo inferido es `9 → 8 → 10 → 9`. Este ejemplo se obtiene del pseudocódigo y no constituye una prueba de ejecución. El uso de XOR por sí solo no permite clasificar la función como cifrado.
 
 ### 4.5 Flujo de control general
 
-Describe en prosa el comportamiento del binario según Ghidra:
+El programa imprime un saludo y el identificador `MAGIC`. Después comprueba si recibió un argumento de línea de comandos. Si no lo recibió, termina normalmente. Si lo recibió, convierte `argv[1]` a entero decimal y verifica el rango mediante `validar`. Para valores del 1 al 99 llama a `compute(n, n * 2)` e imprime el resultado; para valores fuera de ese rango muestra `Valor fuera de rango (0-100)`. El flujo normal devuelve 0 tanto tras el cálculo como tras el rechazo del rango.
 
-> (¿Qué hace el programa? ¿Hay verificaciones de contraseña, cifrado, acceso a red, etc.?)
+En las tres funciones examinadas no se observan verificaciones de contraseña ni llamadas explícitas de comunicación de red. La URL encontrada durante la extracción de cadenas no demuestra por sí sola una conexión. La función `compute` realiza operaciones aritméticas y de bits, sin evidencia suficiente para atribuirle una finalidad criptográfica. Estas conclusiones corresponden al análisis estático de las funciones revisadas; el comportamiento de ejecución debe contrastarse con la fase de análisis dinámico.
+
+Las capturas requeridas deben conservarse en `analysis/ghidra/screenshots/` con los nombres `01_symbol_tree.png`, `02_decompiler_main.png` y `03_decompiler_fn2.png`.
 
 ---
 
