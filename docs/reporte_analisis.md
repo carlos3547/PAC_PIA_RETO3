@@ -394,16 +394,21 @@ Marca con ✅ las que completaste y ❌ las que omitiste (con justificación):
 ## 8. Reflexión
 
 1. **¿Qué herramienta fue más útil para entender el binario y por qué?**  
-   >
+   > Ghidra fue la herramienta más útil, ya que su descompilador de código intermedio (IL) a C permitió analizar con claridad la lógica interna, las llamadas a funciones y la estructura del binario ELF sin necesidad de interpretar directamente código ensamblador en crudo.
+   > Esto facilitó identificar rápidamente los puntos de entrada y los flujos de control condicionales del objetivo.
+
 
 2. **¿Qué encontraste en el análisis dinámico que el estático no mostraba?**  
-   >
+   > El análisis dinámico (mediante herramientas de rastreo) permitió observar el comportamiento real en tiempo de ejecución, revelando llamadas a librerías compartidas, resolución dinámica de símbolos y argumentos que se cargan únicamente en memoria durante la ejecución.
+   > El análisis estático por sí solo solo muestra la estructura estática del binario, mientras que la ejecución expone interacciones reales con el sistema operativo y el manejo dinámico de recursos.
 
 3. **¿Cómo usarías CAPA en un pipeline automatizado de análisis de malware?**  
-   >
+   > Se integraría CAPA como una etapa automatizada posterior a la ingesta de muestras (por ejemplo, en un script de Python dentro de un entorno aislado).
+   > Esto permitiría etiquetar capacidades técnicas de forma masiva como técnicas de evasión, persistencia o inyección identificadas por reglas ATT&CK para priorizar rápidamente qué muestras sospechosas requieren una inversión de tiempo mayor en ingeniería inversa manual.
 
 4. **Si este binario fuera malware, ¿qué técnica anti-análisis hubiera complicado más tu trabajo?**  
-   >
+   > Técnicas de ofuscación avanzada de código, empaquetado (packing) o rutinas de anti-depuración (como la detección de trazas mediante ptrace o comprobaciones de temporizadores de ejecución).
+   > Estas técnicas fuerzan al analista a realizar un desempaquetado manual en memoria o a implementar técnicas de evasión de parches (hooking/patching) antes de poder comprender la verdadera lógica del binario.
 
 ---
 
