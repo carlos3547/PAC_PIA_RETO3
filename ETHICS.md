@@ -40,11 +40,11 @@ VM aislada (Internal Network)
 
 Al hacer push a este repositorio, confirmas que:
 
-- [ ] Leíste y entiendes este documento.
-- [ ] Todo el análisis dinámico lo realizaste en una VM con Internal Network.
-- [ ] No usaste estas técnicas en sistemas sin autorización.
-- [ ] El binario analizado es propio, educativo o tienes permiso para analizarlo.
-- [ ] No subiste datos sensibles al repositorio.
+- [ Si] Leíste y entiendes este documento.
+- [ Si] Todo el análisis dinámico lo realizaste en una VM con Internal Network.
+- [ Si] No usaste estas técnicas en sistemas sin autorización.
+- [ Si] El binario analizado es propio, educativo o tienes permiso para analizarlo.
+- [ Si] No subiste datos sensibles al repositorio.
 
 **Matrícula:** 2013681  
 **Fecha:** 03/11/2026
