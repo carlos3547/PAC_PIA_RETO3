@@ -46,8 +46,8 @@ Al hacer push a este repositorio, confirmas que:
 - [ ] El binario analizado es propio, educativo o tienes permiso para analizarlo.
 - [ ] No subiste datos sensibles al repositorio.
 
-**Matrícula:** ________________  
-**Fecha:** ________________
+**Matrícula:** 2013681  
+**Fecha:** 03/11/2026
 
 ---
 
