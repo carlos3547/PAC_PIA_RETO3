@@ -1,4 +1,3 @@
-Aportaciones
 | Actividad | Marcos | Carlos |
 |---|---|---|
 | Organización del repositorio | Creación de carpetas y archivos iniciales para organizar las evidencias. | Incorporación de resultados al repositorio. |
